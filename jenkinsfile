@@ -1,10 +1,20 @@
 pipeline {
-    agent { 'agent1' }
+    agent { label 'agent1' }
+ 
     stages {
-        stage('Build') {
+        stage('Clone Repository') {
             steps {
-                script {
-                sh 'echo "hello"'
+                sh 'rm -rf java_file || true'
+                sh 'git clone -b main https://github.com/Siddhant40/java-file.git'
+                echo "Cloned..."
+            }
+        }
+        stage('Run') {
+            steps {
+                dir('java_file') {
+                    sh 'ls -l'
+                    sh 'javac Main.java'
+                    sh 'java Main'
                 }
             }
         }
