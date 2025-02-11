@@ -1,0 +1,11 @@
+pipeline {
+    agent { label 'agent1' }  // Ensure this matches your agent's label
+ 
+    stages {
+        stage('Hello World') {
+            steps {
+                echo 'Hello, World from Docker Agent!'
+            }
+        }
+    }
+}
