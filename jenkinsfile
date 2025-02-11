@@ -4,17 +4,18 @@ pipeline {
     stages {
         stage('Compile') {
             steps {
-                
-                    sh 'javac Main.java'
+                sh 'rm -rf java_file || true'
+                dir('java_file') {
+                    sh 'javac Hello.java'
                     echo "Compilation successful."
-                
+                }
             }
         }
         stage('Run') {
             steps {
-            
+                dir('java_file') {
                     sh 'java Hello'
-                
+                }
             }
         }
     }
