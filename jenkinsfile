@@ -4,10 +4,10 @@ pipeline {
     stages {
         stage('Compile') {
             steps {
-                dir('java_file') {
+                
                     sh 'javac Main.java'
                     echo "Compilation successful."
-                }
+                
             }
         }
         stage('Run') {
