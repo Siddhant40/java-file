@@ -1,14 +1,19 @@
 pipeline {
-    agent { label 'agent1' }
+    agent { label 'java_agent' }
  
     stages {
-      
+        stage('Compile') {
+            steps {
+                dir('java_file') {
+                    sh 'javac Main.java'
+                    echo "Compilation successful."
+                }
+            }
+        }
         stage('Run') {
             steps {
                 dir('java_file') {
-                    sh 'ls -l'
-                    sh 'javac Main.java'
-                    sh 'java Main'
+                    sh 'java Hello'
                 }
             }
         }
