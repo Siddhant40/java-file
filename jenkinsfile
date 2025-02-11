@@ -12,9 +12,9 @@ pipeline {
         }
         stage('Run') {
             steps {
-                dir('java_file') {
+            
                     sh 'java Hello'
-                }
+                
             }
         }
     }
