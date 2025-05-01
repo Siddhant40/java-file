@@ -1,5 +1,7 @@
-Jenkins Parallel Java Program Execution Pipeline
+**Jenkins Parallel Java Program Execution Pipeline**
+
 📖 Overview
+
 This project demonstrates implementing parallel execution of Java programs using Jenkins Pipelines. The pipeline is designed to:
 
 Compile and run two Java programs in parallel
