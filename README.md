@@ -1,23 +1,37 @@
 **Jenkins Parallel Java Program Execution Pipeline**
 
 📖 Overview
-
 This project demonstrates implementing parallel execution of Java programs using Jenkins Pipelines. The pipeline is designed to:
+
+Use a Docker container for Java compilation and execution
 
 Compile and run two Java programs in parallel
 
 Archive the compiled .class files
 
 Clean up the Jenkins workspace post-execution
+
+
 🛠️ Jenkins Pipeline Workflow
-✅ Step 1: Created Java Files
-Added two Java files to the GitHub repository:
 
-Main1.java
+✅ Step 1: Setting Up a Containerized Environment
+To ensure a proper and isolated environment for compiling Java programs, a Docker container with a pre-configured Java image was used.
 
-Main2.java
+Steps Performed:
 
-GitHub Repository: java-file
+Installed and ensured Docker was running on my system.
+
+Installed the Docker Pipeline plugin in Jenkins.
+
+Created a new Pipeline Job in Jenkins.
+
+agent1 is a Jenkins agent pre-configured to use Docker as its environment, enabling containerized builds automatically without needing to explicitly declare a docker block in each pipeline.
+
+Executed the pipeline and verified that Jenkins successfully set up the containerized environment.
+
+📸 Screenshot 1: Showing the successful container setup.
+![image](https://github.com/user-attachments/assets/e6649be1-efc8-4753-be1c-4c0159df88ba)
+
 
 ✅ Step 2: Created a New Jenkins Project
 Project Name: Parallel
